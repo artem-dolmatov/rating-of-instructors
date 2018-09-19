@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рейтинг Инструкторов</title>
+</head>
+<body>
+    <a href="/admin">Вход в админ-панель</a>
+
+    <h3>Здесь будут все инструкторы</h3>
+    {% block content %}
+        {% for instructor in instructor_list %}
+            <li>
+                <a>{{ instructor.name }}</a>
+            </li>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
