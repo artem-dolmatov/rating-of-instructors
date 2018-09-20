@@ -1,0 +1,9 @@
+{% extends "instructors/instructor_list.html" %}
+
+{% block title %}
+    <title>{{ instructor.surname }} {{ instructor.name }} {{ instructor.patronymic }}</title>
+{% endblock %}
+
+{% block content %}
+    <p>{{ instructor.description }}</p>
+{% endblock %}

@@ -5,3 +5,6 @@ from .models import Instructor
 # Create your views here.
 class InstructorListView(generic.ListView):
     model = Instructor
+
+class InstructorDetailView(generic.DetailView):
+    model = Instructor

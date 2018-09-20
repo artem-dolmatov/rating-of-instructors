@@ -2,16 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Рейтинг Инструкторов</title>
+    {% block title %}<title>Рейтинг Инструкторов</title>{% endblock %}
 </head>
 <body>
     <a href="/admin">Вход в админ-панель</a>
 
-    <h3>Список инструкторов</h3>
     {% block content %}
+        <h3>Список инструкторов</h3>
         {% for instructor in instructor_list %}
             <li>
-                <a>{{ instructor.surname }} {{ instructor.name }} {{ instructor.patronymic }}</a>
+                <a href="{{ instructor.get_absolute_url }}">{{ instructor.surname }} {{ instructor.name }} {{ instructor.patronymic }}</a>
                 <p>Стаж с {{ instructor.driving_experience }}</p>
                 <p>{{ instructor.description }}</p>
             </li>
