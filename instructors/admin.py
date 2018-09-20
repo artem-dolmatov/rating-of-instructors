@@ -19,5 +19,6 @@ class InstructorAdmin(admin.ModelAdmin):
         "price_hour",
         "length_of_hour",
     ]
+    search_fields = [field.name for field in models.Instructor._meta.fields]
 
 admin.site.register(models.Instructor, InstructorAdmin)

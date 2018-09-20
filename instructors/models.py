@@ -9,15 +9,8 @@ class Instructor(models.Model):
         ('tymen', 'Тюмень'),
     )
     CHOISE_TRANSMISSION = (
-        ('mkpp', 'Мкпп'),
-        ('akpp', 'Акпп'),
-    )
-    CHOISE_CATEGORY = (
-        ('a', 'A'),
-        ('b', 'B'),
-        ('c', 'C'),
-        ('d', 'D'),
-        ('e', 'E'),
+        ('mkpp', 'МКПП'),
+        ('akpp', 'АКПП'),
     )
     CHOISE_GENDER = (
         ('men', 'Мужской'),
@@ -38,15 +31,11 @@ class Instructor(models.Model):
     city               = models.CharField(max_length=20, verbose_name="Город", choices=CHOISE_CITY)
     car                = models.CharField(max_length=20, verbose_name="Автомобиль")
     transmission       = models.CharField(max_length=20, verbose_name="Коробка передач", choices=CHOISE_TRANSMISSION)
-    category           = models.CharField(max_length=20, verbose_name="Категория", choices=CHOISE_CATEGORY)
+    category           = models.CharField(max_length=20, verbose_name="Категория")
     gender             = models.CharField(max_length=20, verbose_name="Пол", choices=CHOISE_GENDER)
     phone              = models.CharField(max_length=20, verbose_name="Телефон")
     price_hour         = models.IntegerField(verbose_name="Стоимость часа")
     length_of_hour     = models.CharField(max_length=10, verbose_name="Продолжительность часа", choices=CHOISE_HOUR)
-
-
-    def __str__(self):
-        return "Имя %s" %(self.name)
 
     class Meta:
         verbose_name = "Инструктор"
