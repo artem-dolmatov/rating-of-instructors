@@ -11,7 +11,7 @@
     {% block content %}
         {% for instructor in instructor_list %}
             <li>
-                <a>{{ instructor.name }}</a>
+                <a>{{ instructor.surname }} {{ instructor.name }} {{ instructor.patronymic }}</a>
             </li>
         {% endfor %}
     {% endblock %}
