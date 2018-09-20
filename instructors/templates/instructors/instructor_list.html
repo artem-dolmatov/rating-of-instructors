@@ -7,11 +7,13 @@
 <body>
     <a href="/admin">Вход в админ-панель</a>
 
-    <h3>Здесь будут все инструкторы</h3>
+    <h3>Список инструкторов</h3>
     {% block content %}
         {% for instructor in instructor_list %}
             <li>
                 <a>{{ instructor.surname }} {{ instructor.name }} {{ instructor.patronymic }}</a>
+                <p>Стаж с {{ instructor.driving_experience }}</p>
+                <p>{{ instructor.description }}</p>
             </li>
         {% endfor %}
     {% endblock %}

@@ -25,8 +25,8 @@ class Instructor(models.Model):
     name               = models.CharField(max_length=20, verbose_name="Имя")
     patronymic         = models.CharField(max_length=20, verbose_name="Отчество")
     age                = models.IntegerField(verbose_name="Возраст")
-    driving_experience = models.IntegerField(verbose_name="Стаж вождения")
-    experience         = models.IntegerField(verbose_name="Проф. стаж")
+    driving_experience = models.DateField(auto_now=False, verbose_name="Стаж вождения c")
+    experience         = models.DateField(auto_now=False, verbose_name="Проф. стаж c")
     school             = models.CharField(max_length=20, verbose_name="Автошкола", choices=CHOISE_SCHOOL)
     city               = models.CharField(max_length=20, verbose_name="Город", choices=CHOISE_CITY)
     car                = models.CharField(max_length=20, verbose_name="Автомобиль")
@@ -36,6 +36,7 @@ class Instructor(models.Model):
     phone              = models.CharField(max_length=20, verbose_name="Телефон")
     price_hour         = models.IntegerField(verbose_name="Стоимость часа")
     length_of_hour     = models.CharField(max_length=10, verbose_name="Продолжительность часа", choices=CHOISE_HOUR)
+    description        = models.TextField(max_length=200, verbose_name="Описание")
 
     class Meta:
         verbose_name = "Инструктор"
